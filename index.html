@@ -3,17 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Test-listing</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link
+      href="
+https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
+"
+      rel="stylesheet"
+    />
+    <script src="
+https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
+"></script>
+    <script src="./js/script.js" defer></script>
   </head>
   <body>
     <article class="card">
       <div class="card__header">
-        <div class="card__slider"></div>
+        <section id="mySlider" class="splide" aria-label="Splide Basic HTML Example">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <img src="./img/kitchen.png" alt="Кухня 1" />
+              </li>
+              <li class="splide__slide">
+                <img src="./img/kitchen.png" alt="Кухня 2" />
+              </li>
+              <li class="splide__slide">
+                <img src="./img/kitchen.png" alt="Кухня 3" />
+              </li>
+              <li class="splide__slide">
+                <img src="./img/kitchen.png" alt="Кухня 4" />
+              </li>
+            </ul>
+          </div>
+        </section>
+
         <button class="card__zoom"><img src="" alt="" /></button>
-        <button class="card__slider-prev" aria-label="Предыдущий слайд"></button>
-        <button class="card__slider-next" aria-label="Следующий слайд"></button>
+
         <div class="card__hover-overlay">
-          <p class="card__hover-overlay-description">Краткое описание товара</p>
+          <p class="card__hover-overlay-description">Описание товара</p>
         </div>
       </div>
 
@@ -26,53 +54,66 @@
         </div>
 
         <div class="card__info">
-          <div class="card__info-article">Артикул - 4607</div>
-          <div class="card__info-description">
-            Угловая бежевая кухня на заказ с матовыми фасадами в современном стиле
-          </div>
+          <p class="card__info-article text-gray-medium">Артикул — 4607</p>
+          <p class="card__info-description text-dark-large">
+            Угловая бежевая кухня на заказ с матовыми фасадами в современном стиле «Нарцисс»
+          </p>
         </div>
 
         <div class="card__material">
-          <p class="card__material-title">Варианты материалов</p>
+          <p class="card__material-title text-gray-medium">Варианты материалов</p>
+
           <div class="card__material-options">
-            <label class="card__material-option">
+            <label class="card__material-option--active">
               <input type="checkbox" class="card__material-checkbox" />
               <span class="card__material-name">ПВХ</span>
             </label>
             <label class="card__material-option">
               <input type="checkbox" class="card__material-checkbox" />
-              <span class="card__material-name">Эмаль</span>
+              <span class="card__material-name text-dark-medium">Эмаль</span>
             </label>
             <label class="card__material-option">
               <input type="checkbox" class="card__material-checkbox" />
-              <span class="card__material-name">Пластик</span>
+              <span class="card__material-name text-dark-medium">Пластик</span>
             </label>
             <label class="card__material-option">
               <input type="checkbox" class="card__material-checkbox" />
-              <span class="card__material-name">Массив</span>
+              <span class="card__material-name text-dark-medium">Массив</span>
             </label>
           </div>
         </div>
 
-        <div class="card__price">
-          <p class="card__price-title">Цена от</p>
-          <span class="card__price-value">515 700 ₽</span>
-          <p class="card__price-metr">Погонный метр от -<span class="card__price-metr-value">30 000 ₽</span></p>
-        </div>
-      </div>
+        <div class="card__purchase">
+          <div class="card__price">
+            <span class="card__price-title text-gray-medium">Цена от</span>
+            <span class="card__price-value text-dark-large">515 700 ₽</span>
+            <span class="card__price-metr text-gray-medium"
+              >Погонный метр от — <span class="card__price-metr-value text-dark-bold">30 000 ₽</span></span
+            >
+          </div>
 
-      <div class="card__footer">
-        <div class="card__actions">
-          <button class="card__like">
-            <img src="" alt="" />
-          </button>
-          <span class="card__like-label">57</span>
+          <div class="card__purchase-button">
+            <button class="order-button">Заказать</button>
+          </div>
         </div>
 
-        <a class="card__calc" href="/calc" target="_blank">
-          <span class="card__calc-text">Рассчитать стоимость</span>
-          <img class="card__calc-icon" src="icon.svg" alt="Иконка расчёта стоимости" />
-        </a>
+        <div class="card__actions-bar">
+          <div class="card__line"></div>
+
+          <div class="card__button-link">
+            <div class="card__actions">
+              <button class="like-button">
+                <img src="./icons/like.svg" alt="" />
+              </button>
+              <span class="card__like-label text-dark-bold">57</span>
+            </div>
+
+            <a class="card__calc" href="/calc" target="_blank">
+              <span class="card__calc-text text-gray-medium">Рассчитать стоимость</span>
+              <img class="card__calc-icon" src="./icons/arrow.svg" alt="Иконка расчёта стоимости" />
+            </a>
+          </div>
+        </div>
       </div>
     </article>
   </body>
