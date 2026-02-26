@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <article class="card">
+      <div class="card__header">
+        <div class="card__slider"></div>
+        <button class="card__zoom"><img src="" alt="" /></button>
+        <button class="card__slider-prev" aria-label="Предыдущий слайд"></button>
+        <button class="card__slider-next" aria-label="Следующий слайд"></button>
+        <div class="card__hover-overlay">
+          <p class="card__hover-overlay-description">Краткое описание товара</p>
+        </div>
+      </div>
+
+      <div class="card__content">
+        <div class="card__pagination">
+          <span class="card__pagination-dot--active"></span>
+          <span class="card__pagination-dot"></span>
+          <span class="card__pagination-dot"></span>
+          <span class="card__pagination-dot"></span>
+        </div>
+
+        <div class="card__info">
+          <div class="card__info-article">Артикул - 4607</div>
+          <div class="card__info-description">
+            Угловая бежевая кухня на заказ с матовыми фасадами в современном стиле
+          </div>
+        </div>
+
+        <div class="card__material">
+          <p class="card__material-title">Варианты материалов</p>
+          <div class="card__material-options">
+            <label class="card__material-option">
+              <input type="checkbox" class="card__material-checkbox" />
+              <span class="card__material-name">ПВХ</span>
+            </label>
+            <label class="card__material-option">
+              <input type="checkbox" class="card__material-checkbox" />
+              <span class="card__material-name">Эмаль</span>
+            </label>
+            <label class="card__material-option">
+              <input type="checkbox" class="card__material-checkbox" />
+              <span class="card__material-name">Пластик</span>
+            </label>
+            <label class="card__material-option">
+              <input type="checkbox" class="card__material-checkbox" />
+              <span class="card__material-name">Массив</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="card__price">
+          <p class="card__price-title">Цена от</p>
+          <span class="card__price-value">515 700 ₽</span>
+          <p class="card__price-metr">Погонный метр от -<span class="card__price-metr-value">30 000 ₽</span></p>
+        </div>
+      </div>
+
+      <div class="card__footer">
+        <div class="card__actions">
+          <button class="card__like">
+            <img src="" alt="" />
+          </button>
+          <span class="card__like-label">57</span>
+        </div>
+
+        <a class="card__calc" href="/calc" target="_blank">
+          <span class="card__calc-text">Рассчитать стоимость</span>
+          <img class="card__calc-icon" src="icon.svg" alt="Иконка расчёта стоимости" />
+        </a>
+      </div>
+    </article>
+  </body>
+</html>
