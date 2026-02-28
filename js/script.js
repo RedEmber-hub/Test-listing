@@ -1,3 +1,6 @@
-const mySlider = new Splide('#mySlider');
-
-mySlider.mount();
+document.addEventListener('DOMContentLoaded', function () {
+  new Splide('#mySlider', {
+    pagination: true,
+    arrows: true,
+  }).mount();
+});

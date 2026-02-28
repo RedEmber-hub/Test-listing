@@ -19,6 +19,18 @@
   font-display: swap;
 }
 
+:root {
+  --color-text-primary: rgba(50, 49, 47, 1);
+  --color-text-secondary: rgba(101, 101, 101, 1);
+  --color-checkbox-active-bg: rgba(50, 49, 47, 1);
+  --color-button: rgba(255, 92, 0, 1);
+  --color-white: rgba(255, 255, 255, 1);
+  --color-surface-card: rgba(246, 246, 246, 1);
+  --color-shadow: rgba(0, 0, 0, 0.15);
+  --color-overlay: rgba(0, 0, 0, 0.5);
+  --color-pagination: rgba(230, 230, 230, 1);
+}
+
 *,
 *::before,
 *::after {
@@ -35,7 +47,6 @@ html {
 
 body {
   font-family: 'SF UI Display', sans-serif;
-  color: #1a1a1a;
 }
 
 img {
@@ -44,36 +55,37 @@ img {
   display: block;
 }
 
-.text-gray-medium {
-  color: rgba(101, 101, 101, 1);
+.text-medium {
   font-family: 'SF UI Display', sans-serif;
   font-weight: 500;
   font-size: 14px;
   line-height: 150%;
 }
 
-.text-dark-large {
-  color: rgba(50, 49, 47, 1);
+.text-semibold {
   font-family: 'SF UI Display', sans-serif;
   font-weight: 600;
   font-size: 22px;
   line-height: 120%;
 }
 
-.text-dark-medium {
-  color: rgba(50, 49, 47, 1);
-  font-family: 'SF UI Display', sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 150%;
-}
-
-.text-dark-bold {
-  color: rgba(50, 49, 47, 1);
+.text-bold {
   font-family: 'SF UI Display', sans-serif;
   font-weight: 700;
   font-size: 14px;
   line-height: 150%;
+}
+
+.white {
+  color: var(--color-white);
+}
+
+.grey {
+  color: var(--color-text-secondary);
+}
+
+.black {
+  color: var(--color-text-primary);
 }
 
 .card {
@@ -90,21 +102,20 @@ img {
 }
 
 .card:hover {
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  transform: translateY(-2px);
+  box-shadow: 0 0 20px var(--color-shadow);
 }
 
 .card:hover .card__content {
-  background-color: rgba(255, 255, 255, 1);
+  background-color: var(--color-white);
 }
 
 .card:hover .card__material-option {
-  background-color: rgba(246, 246, 246, 1);
+  background-color: var(--color-surface-card);
   border-radius: 18px;
 }
 
 .card:hover .card__actions {
-  background-color: rgba(246, 246, 246, 1);
+  background-color: var(--color-white);
   border-radius: 18px;
 }
 
@@ -124,13 +135,13 @@ img {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--color-overlay);
   opacity: 0;
   z-index: 2;
 }
 
 .card__hover-overlay-description {
-  color: rgba(255, 255, 255, 1);
+  color: var(--color-white);
   font-family: 'SF UI Display', sans-serif;
   font-weight: 500;
   font-size: 14px;
@@ -143,17 +154,13 @@ img {
 }
 
 .card__content {
-  background-color: rgba(246, 246, 246, 1);
+  background-color: var(--color-surface-card);
 
   display: flex;
   flex-direction: column;
   gap: 20px;
 
-  padding: 10px 20px 14px 20px;
-}
-
-.card__pagination {
-  height: 2px;
+  padding: 20px 20px 14px 20px;
 }
 
 .card__info {
@@ -164,7 +171,7 @@ img {
 }
 
 .card__info-description {
-  color: rgba(50, 49, 47, 1);
+  color: var(--color-text-primary);
   font-family: 'SF UI Display', sans-serif;
   font-weight: 600;
   font-size: 22px;
@@ -191,12 +198,13 @@ img {
 
 .card__material-option {
   padding: 6px 12px;
+  cursor: pointer;
 }
 
 .card__material-option--active {
   padding: 6px 12px;
-  color: rgba(255, 255, 255, 1);
-  background-color: rgba(50, 49, 47, 1);
+  color: var(--color-white);
+  background-color: var(--color-checkbox-active-bg);
   border-radius: 18px;
 }
 
@@ -235,8 +243,8 @@ img {
   font-size: 15px;
   line-height: 150%;
 
-  color: rgba(255, 255, 255, 1);
-  background-color: rgba(255, 92, 0, 1);
+  color: var(--color-white);
+  background-color: var(--color-button);
   border: none;
   border-radius: 14px;
   cursor: pointer;
@@ -258,7 +266,7 @@ img {
 .card__line {
   width: 100%;
   height: 1px;
-  background-color: rgba(230, 230, 230, 1);
+  background-color: var(--color-white);
 }
 
 .card__button-link {
@@ -293,4 +301,33 @@ img {
   outline: none;
 
   gap: 5px;
+}
+
+#mySlider .splide__pagination {
+  display: flex;
+  gap: 6px;
+  bottom: -20px;
+
+  background-color: var(--color-surface-card);
+}
+
+#mySlider .splide__pagination li {
+  flex: 1;
+}
+
+#mySlider .splide__pagination__page {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-pagination);
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+  transform: none;
+  opacity: 1;
+}
+
+/* Убираем стандартное увеличение */
+#mySlider .splide__pagination__page.is-active {
+  background-color: var(--color-button);
+  transform: none;
 }
