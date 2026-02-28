@@ -47,6 +47,7 @@ html {
 
 body {
   font-family: 'SF UI Display', sans-serif;
+  height: 100%;
 }
 
 img {
@@ -88,11 +89,16 @@ img {
   color: var(--color-text-primary);
 }
 
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 100px 202px;
+}
+
 .card {
   width: 508px;
   max-width: 508px;
-  height: 704px;
-  max-height: 704px;
 
   display: flex;
   flex-direction: column;
@@ -105,7 +111,8 @@ img {
   box-shadow: 0 0 20px var(--color-shadow);
 }
 
-.card:hover .card__content {
+.card:hover .card__content,
+.card:hover #mySlider .splide__pagination {
   background-color: var(--color-white);
 }
 
@@ -134,7 +141,7 @@ img {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: 19px;
   background-color: var(--color-overlay);
   opacity: 0;
   z-index: 2;
@@ -176,6 +183,7 @@ img {
   font-weight: 600;
   font-size: 22px;
   line-height: 120%;
+  height: 52px;
 
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -199,13 +207,30 @@ img {
 .card__material-option {
   padding: 6px 12px;
   cursor: pointer;
+  position: relative;
 }
 
-.card__material-option--active {
-  padding: 6px 12px;
+.card__material-option:has(.card__material-checkbox:checked) {
+  padding: 6px 12px 6px 28px;
   color: var(--color-white);
   background-color: var(--color-checkbox-active-bg);
   border-radius: 18px;
+}
+
+.card__material-option:has(.card__material-checkbox:checked)::before {
+  content: '✔';
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  color: var(--color-text-primary);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 6px;
 }
 
 .card__material-checkbox {
@@ -225,6 +250,10 @@ img {
   display: flex;
   flex-direction: column;
   gap: 3px;
+}
+
+.card__price-value {
+  height: 26px;
 }
 
 .card__purchase-button {
@@ -266,7 +295,7 @@ img {
 .card__line {
   width: 100%;
   height: 1px;
-  background-color: var(--color-white);
+  background-color: var(--color-pagination);
 }
 
 .card__button-link {
@@ -303,19 +332,22 @@ img {
   gap: 5px;
 }
 
-#mySlider .splide__pagination {
+[id^='mySlider-'] .splide__pagination {
   display: flex;
+  height: 20px;
   gap: 6px;
   bottom: -20px;
 
   background-color: var(--color-surface-card);
 }
 
-#mySlider .splide__pagination li {
+[id^='mySlider-'] .splide__pagination li {
   flex: 1;
+
+  display: flex;
 }
 
-#mySlider .splide__pagination__page {
+[id^='mySlider-'] .splide__pagination__page {
   width: 100%;
   height: 3px;
   background-color: var(--color-pagination);
@@ -326,8 +358,7 @@ img {
   opacity: 1;
 }
 
-/* Убираем стандартное увеличение */
-#mySlider .splide__pagination__page.is-active {
+[id^='mySlider-'] .splide__pagination__page.is-active {
   background-color: var(--color-button);
   transform: none;
 }
